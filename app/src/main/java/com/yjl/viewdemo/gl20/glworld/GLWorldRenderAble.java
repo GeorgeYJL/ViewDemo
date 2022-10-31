@@ -1,4 +1,5 @@
 package com.yjl.viewdemo.gl20.glworld;
 
-public class GLWorldRenderAble {
+public abstract class GLWorldRenderAble {
+    public abstract void draw(float[]mvpMatrix);
 }

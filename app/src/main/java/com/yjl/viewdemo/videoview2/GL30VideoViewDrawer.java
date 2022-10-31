@@ -4,7 +4,7 @@ import android.content.Context;
 import android.opengl.GLES11Ext;
 import android.opengl.GLES30;
 
-import com.yjl.viewdemo.utils.GLShaderUtils;
+import com.yjl.viewdemo.utils.GLLoaderUtils;
 
 import java.nio.FloatBuffer;
 
@@ -47,10 +47,10 @@ public class GL30VideoViewDrawer {
 
 
     public GL30VideoViewDrawer(Context mContext) {
-        mVertexBuffer = GLShaderUtils.getFloatBuffer(mVertexData);
-        mTextureCoordBuffer = GLShaderUtils.getFloatBuffer(mTextureCoordData);
+        mVertexBuffer = GLLoaderUtils.getFloatBuffer(mVertexData);
+        mTextureCoordBuffer = GLLoaderUtils.getFloatBuffer(mTextureCoordData);
 
-        mProgramID = GLShaderUtils.loadAndInitProgramFromAssets(mContext,"video3.vert","video3.frag",3);
+        mProgramID = GLLoaderUtils.loadAndInitProgramFromAssets(mContext,"video3.vert","video3.frag",3);
     }
 
     public void draw(int mTextureId, float[] mProjectionMatrix, float[] sTMatrix) {

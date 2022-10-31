@@ -5,7 +5,7 @@ import android.opengl.GLES11Ext;
 import android.opengl.GLES20;
 
 import java.nio.FloatBuffer;
-import com.yjl.viewdemo.utils.GLShaderUtils;
+import com.yjl.viewdemo.utils.GLLoaderUtils;
 /**
  * @Project：ViewDemo
  * @Package：com.yjl.viewdemo.videoview
@@ -53,10 +53,10 @@ public class GL20VideoViewDrawer {
 
     public GL20VideoViewDrawer(Context context) {
 
-        mVertexBuffer = GLShaderUtils.getFloatBuffer(mVertex);
-        mTextureCoordBuffer = GLShaderUtils.getFloatBuffer(mTextureCoord);
+        mVertexBuffer = GLLoaderUtils.getFloatBuffer(mVertex);
+        mTextureCoordBuffer = GLLoaderUtils.getFloatBuffer(mTextureCoord);
 
-        mProgram = GLShaderUtils.loadAndInitProgramFromAssets(context,"video.vert","video.frag",2);
+        mProgram = GLLoaderUtils.loadAndInitProgramFromAssets(context,"video.vert","video.frag",2);
 
 
         aPositionHandle = GLES20.glGetAttribLocation(mProgram,"aPosition");

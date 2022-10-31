@@ -13,7 +13,7 @@ import android.content.Context;
 import android.opengl.GLES11Ext;
 import android.opengl.GLES30;
 
-import com.yjl.viewdemo.utils.GLShaderUtils;
+import com.yjl.viewdemo.utils.GLLoaderUtils;
 
 import java.nio.FloatBuffer;
 
@@ -48,10 +48,10 @@ public class Camera2GLSurfaceViewDrawer {
     public Camera2GLSurfaceViewDrawer(Context context) {
         this.mContext = context;
 
-        mTextureCoordBuffer = GLShaderUtils.getFloatBuffer(mTextureCoord);
-        mVertexBuffer = GLShaderUtils.getFloatBuffer(mVertex);
+        mTextureCoordBuffer = GLLoaderUtils.getFloatBuffer(mTextureCoord);
+        mVertexBuffer = GLLoaderUtils.getFloatBuffer(mVertex);
 
-        mProgram = GLShaderUtils.loadAndInitProgramFromAssets(this.mContext,"camera.vert","camera.frag",3);
+        mProgram = GLLoaderUtils.loadAndInitProgramFromAssets(this.mContext,"camera.vert","camera.frag",3);
 
     }
 
